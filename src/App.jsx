@@ -30,13 +30,14 @@ function App() {
   if (selectedPost) {
     return (
       <div className="max-w-2xl mx-auto p-4">
+        <h1 className="text-2xl font-bold mb-5">Detail Post</h1>
         <button
           onClick={() => setSelectedPost(null)}
           className="mb-4 px-3 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
         >
           ← Back to Posts
         </button>
-        <h2 className="text-2xl font-bold mb-2">{selectedPost.title}</h2>
+        <h2 className="text-2xl font-medium mb-2">{selectedPost.title}</h2>
         <p className="text-gray-700">{selectedPost.body}</p>
       </div>
     );
@@ -44,7 +45,10 @@ function App() {
 
   //default view
   return (
-    <PostsList posts={posts} onSelect={setSelectedPost}></PostsList>
+    <>
+      <h1 className='text-2xl font-bold mb-3'>CSPTAGRAM</h1>
+      <PostsList posts={posts} onSelect={setSelectedPost}></PostsList>
+    </>
   )
 }
 
